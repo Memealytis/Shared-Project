@@ -1,3 +1,4 @@
+from donnees import *
 import random
 
 # --- 1. SETUP DES VARIABLES ---
@@ -15,7 +16,7 @@ Stage = 0
 
 win = 0
 
-difficulté = int(input('Quel difficulté voulez vous choisir? Facile = 1 | Medium = 2 | Difficile = 3'))
+difficulté = int(input('Quel difficulté voulez vous choisir? Facile = 1 | Medium = 2 | Difficile = 3 : '))
 
 if difficulté == 1:
     difficulté_choisie = liste_facile
@@ -45,14 +46,20 @@ def show_word(mot_choisi, liste_deviné):
             
     return resultat
 
+def mot_trouvee():
+    pass
+
+def rejouer():
+    pass
+
 # --- 3. CONFIGURATION DU JEU ---
 
 while win == 0:
     
     print("Votre progres:", show_word(mot_choisi, liste_deviné))
     
-    deviner = int(input('Voulez vous deviner une lettre ou un mot? Lettre = 1 | Mot = 2'))
+    deviner = int(input('Voulez vous deviner une lettre ou un mot? Lettre = 1 | Mot = 2 : '))
     if deviner == 1:
-        lettre_choisi = input("Deviner une lettre")
+        lettre_choisi = input("Deviner une lettre : ")
     else:
-        mot_choisi = input("Deviner un mot")
+        mot_choisi = input("Deviner un mot : ")
