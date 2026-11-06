@@ -1,5 +1,7 @@
 import random
 
+
+# -- LISTE DE MOTS -- #
 liste_facile = ['RAM','Tom','Bit','Pic','Pois','Bug']
 liste_medium = ['Chien','Pearl','Mange','Salut','Lampure','Octet','Thonny','Clavier','Cheval','Grand','Maitre','Patate']
 liste_difficile = ['Constant','Attaque','Ordinateur','Analyse']
@@ -14,7 +16,7 @@ mot_choisi = choix_mot(difficulté_choisie)
 mot_choisi = mot_choisi.lower()
 #print(mot_choisi)
 
-# -- 2 CONFIGURATION DU JEU -- 
+# -- 2 CONFIGURATION DU JEU -- #
 if difficulté == 1:
     difficulté_choisie = liste_facile
 elif difficulté == 2:
@@ -22,6 +24,8 @@ elif difficulté == 2:
 else:
     difficulté_choisie = liste_difficile
 
+
+# -- FONCTIONS -- #
 def choix_mot(difficulté_choisie):
     mot = random.choice(difficulté_choisie)
     return mot
