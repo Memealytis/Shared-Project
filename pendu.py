@@ -1,5 +1,3 @@
-import fonctions
-import donnees
 import random
 from donnees import *
 from fonctions import *
