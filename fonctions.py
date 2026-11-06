@@ -12,7 +12,7 @@ mot_choisi = ''
 
 liste_deviné = []
 
-Stage = 0
+erreurs = 0
 
 win = 0
 
@@ -46,15 +46,20 @@ def show_word(mot_choisi, liste_deviné):
             
     return resultat
 
-def mot_trouvee():
+def lettre_demandé():
     pass
+
+def mot_trouvee():
+    global win
+    if show_word(mot_choisi, liste_deviné) == mot_choisi:
+        win = 1
 
 def rejouer():
-    pass
+    reponse = ''
+    while reponse != 'oui' or reponse != 'non':
+        reponse = input("voulez vous rejouer? oui ou non")
 
-def affichage_jeu(p1,p1,p3):
-    print(DESSINS(nb_erreur))
-    print(cache_mot(mot_dev,liste_choix_joueur))
+
 
 # --- 3. CONFIGURATION DU JEU ---
 
@@ -67,5 +72,3 @@ while win == 0:
         lettre_choisi = input("Deviner une lettre : ")
     else:
         mot_choisi = input("Deviner un mot : ")
-        
-
