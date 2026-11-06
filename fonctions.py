@@ -1,22 +1,22 @@
 import random
 
+# --- 1. SETUP DES VARIABLES ---
 
-# -- LISTE DE MOTS -- #
 liste_facile = ['RAM','Tom','Bit','Pic','Pois','Bug']
 liste_medium = ['Chien','Pearl','Mange','Salut','Lampure','Octet','Thonny','Clavier','Cheval','Grand','Maitre','Patate']
 liste_difficile = ['Constant','Attaque','Ordinateur','Analyse']
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
 mot_choisi = ''
-difficulté = int(input('Quel difficulté voulez vous choisir? Facile = 1 | Medium = 2 | Difficile = 3'))
 
 liste_deviné = []
 
-mot_choisi = choix_mot(difficulté_choisie)
-mot_choisi = mot_choisi.lower()
-#print(mot_choisi)
+Stage = 0
 
-# -- 2 CONFIGURATION DU JEU -- #
+win = 0
+
+difficulté = int(input('Quel difficulté voulez vous choisir? Facile = 1 | Medium = 2 | Difficile = 3'))
+
 if difficulté == 1:
     difficulté_choisie = liste_facile
 elif difficulté == 2:
@@ -25,16 +25,32 @@ else:
     difficulté_choisie = liste_difficile
 
 
-# -- FONCTIONS -- #
+# --- 2. DEFINITION DES FONCTIONS ---
+
 def choix_mot(difficulté_choisie):
     mot = random.choice(difficulté_choisie)
     return mot
 
+mot_choisi = choix_mot(difficulté_choisie)
+mot_choisi = mot_choisi.lower()
+#print(mot_choisi)
+
 def show_word(mot_choisi, liste_deviné):
     resultat = ''
-    pass
+    for element in mot_choisi:
+        if element in liste_deviné:
+            resultat = resultat + element
+        else:
+            resultat = resultat + '_'
+            
+    return resultat
+
+# --- 3. CONFIGURATION DU JEU ---
 
 while win == 0:
+    
+    print("Votre progres:", show_word(mot_choisi, liste_deviné))
+    
     deviner = int(input('Voulez vous deviner une lettre ou un mot? Lettre = 1 | Mot = 2'))
     if deviner == 1:
         lettre_choisi = input("Deviner une lettre")
