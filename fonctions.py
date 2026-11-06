@@ -14,6 +14,7 @@ mot_choisi = choix_mot(difficulté_choisie)
 mot_choisi = mot_choisi.lower()
 #print(mot_choisi)
 
+# -- 2 CONFIGURATION DU JEU -- 
 if difficulté == 1:
     difficulté_choisie = liste_facile
 elif difficulté == 2:
