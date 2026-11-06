@@ -8,6 +8,12 @@ alphabet = 'abcdefghijklmnopqrstuvwxyz'
 mot_choisi = ''
 difficulté = int(input('Quel difficulté voulez vous choisir? Facile = 1 | Medium = 2 | Difficile = 3'))
 
+liste_deviné = []
+
+mot_choisi = choix_mot(difficulté_choisie)
+mot_choisi = mot_choisi.lower()
+#print(mot_choisi)
+
 if difficulté == 1:
     difficulté_choisie = liste_facile
 elif difficulté == 2:
@@ -19,12 +25,9 @@ def choix_mot(difficulté_choisie):
     mot = random.choice(difficulté_choisie)
     return mot
 
-def show_word():
-    
-
-mot_choisi = choix_mot(difficulté_choisie)
-mot_choisi = mot_choisi.lower()
-#print(mot_choisi)
+def show_word(mot_choisi, liste_deviné):
+    resultat = ''
+    pass
 
 while win == 0:
     deviner = int(input('Voulez vous deviner une lettre ou un mot? Lettre = 1 | Mot = 2'))
