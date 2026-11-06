@@ -1,6 +1,8 @@
 import fonctions
 import donnees
 import random
+from donnees import *
+from fonctions import *
 
 print("Bienvenu sur notre jeu de pendu")
 while condition : # condition a definir
@@ -8,15 +10,6 @@ while condition : # condition a definir
     taille = len(mot)
     affichage(taille) #
     
-    
-    
-def cache_mot(mot,liste_lettres): # mot : str, mot a devnir, liste_lettres : list, listes de lettres
-    resultat = ""
-    for lettre in mot:
-        pass
-     
-    return resultat
-
 
 def affichage_jeu(p1,p1,p3):
     print(DESSINS(nb_erreur))
